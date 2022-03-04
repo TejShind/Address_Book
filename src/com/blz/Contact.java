@@ -50,6 +50,14 @@ public class Contact {
         this.state = state;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public int getZip() {
         return zip;
     }
@@ -66,11 +74,22 @@ public class Contact {
         this.phoneNo = phoneNo;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", email='" + email + '\'' +
+                ", zip=" + zip +
+                ", phoneNo=" + phoneNo +
+                '}';
     }
 }
+
+
+
+
+
