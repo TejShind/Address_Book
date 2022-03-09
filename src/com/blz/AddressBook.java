@@ -42,14 +42,12 @@ public class AddressBook {
     }
 
     //Compute for Edit contacts.
-    public void editContact(String edit) {
+    public void editContact(String firstName) {
         System.out.println(AddressBook.contacts);
         for (int i = 0; i < contacts.size(); i++) {
-
-            Contact contact = (Contact)contacts.get(i);
+            Contact contact = (Contact) contacts.get(i);
             System.out.println(contact);
-            // contact.setFirstName(edit);
-            if (contact.getFirstName().equals(edit)) {
+            if (contact.getFirstName().equals(firstName)) {
                 System.out.println("What data you want to edit?");
                 System.out.println("1.Edit First name");
                 System.out.println("2.Edit Last name ");
@@ -86,6 +84,17 @@ public class AddressBook {
                 }
             }
             System.out.println(AddressBook.contacts);
+        }
+    }
+
+    //Compute for Delete contacts.
+    public void deleteContact(String firstName) {
+        for (Contact contact : contacts) {
+            if (contact.getFirstName().equals(firstName)) {
+                contacts.remove(contact);
+            }
+            System.out.println(AddressBook.contacts);
+            break;
         }
     }
 }
