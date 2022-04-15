@@ -4,3 +4,4 @@
 3)Add a new Contact to Address Book.
 4)Edit existing contact details.
 5)Delete contact details.
+6)Add multiple contact details.

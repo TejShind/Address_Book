@@ -7,10 +7,11 @@ import static java.lang.System.in;
 public class AddressBook {
 
     public static List<Contact> contacts = new ArrayList<>();
-    Scanner scanner = new Scanner(in);
+    static Scanner scanner = new Scanner(in);
+
 
     //Compute for ADD contacts.
-    public void addContacts() {
+    public static void addContacts() {
         System.out.println("Enter the contact details");
         Contact contact = new Contact();
 
@@ -41,13 +42,34 @@ public class AddressBook {
         contacts.add(contact);
     }
 
+    //Compute for Delete contacts.
+    public static void deleteContact() {
+        for (Contact contact : contacts) {
+            if (contact.getFirstName().equals(contact.getFirstName())) {
+                contacts.remove(contact);
+            }
+            System.out.println(AddressBook.contacts);
+            break;
+        }
+    }
+
+    //Compute for add multiple contacts.
+    static void addMultipleContact() {
+        System.out.println("Enter Number of Contacts to Add into Contact Book");
+        int number = scanner.nextInt();
+        for (int i = 0; i < number; i++) {
+            addContacts();
+            System.out.println(i + 1 + " Contact added Successfully.. ");
+        }
+    }
+
     //Compute for Edit contacts.
-    public void editContact(String firstName) {
+    public void editContact() {
         System.out.println(AddressBook.contacts);
         for (int i = 0; i < contacts.size(); i++) {
             Contact contact = (Contact) contacts.get(i);
             System.out.println(contact);
-            if (contact.getFirstName().equals(firstName)) {
+            if (contact.getFirstName().equals(contact.getFirstName())) {
                 System.out.println("What data you want to edit?");
                 System.out.println("1.Edit First name");
                 System.out.println("2.Edit Last name ");
@@ -83,18 +105,8 @@ public class AddressBook {
 
                 }
             }
-            System.out.println(AddressBook.contacts);
-        }
-    }
 
-    //Compute for Delete contacts.
-    public void deleteContact(String firstName) {
-        for (Contact contact : contacts) {
-            if (contact.getFirstName().equals(firstName)) {
-                contacts.remove(contact);
-            }
             System.out.println(AddressBook.contacts);
-            break;
         }
     }
 }
